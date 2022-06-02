@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-title>Sınav listeesi</mat-card-title>
+    <mat-card-content>
+        <mat-nav-liste role="liste" *ngFor="let sinav of sinavzes">
+
+            <mat-liste-item role="listeitem" (click)="api.selectsinav(sinav)">{{ sinav.title }}</mat-liste-item>
+            
+        </mat-nav-liste>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+</mat-card>

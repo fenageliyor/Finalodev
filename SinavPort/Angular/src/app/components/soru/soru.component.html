@@ -1,0 +1,33 @@
+<mat-card>
+    <mat-card-title>
+        <span *ngIf="soru.id">Soruyu Düzenle</span>
+        <span *ngIf="!soru.id">Yeni Soru</span>
+    </mat-card-title>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+              <input matInput [(ngModel)]="soru.soru" name="soru" placeholder="soru">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="soru.dogrucevap" name="dogrucevap" placeholder="dogru cevap">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="soru.cevap1" name="cevap1" placeholder="yanlis cevap 1">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="soru.cevap2" name="cevap2" placeholder="yanlis cevap 2">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="soru.cevap3" name="cevap3" placeholder="yanlis cevap 3">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button *ngIf="!soru.id" mat-stroked-button (click)="Post(soru)" color="primary">Paylaş</button>
+        
+        <button *ngIf="soru.id" mat-stroked-button (click)="api.putsoru(soru)" color="primary">Düzenle</button>
+        <button *ngIf="soru.id" mat-stroked-button (click)="soru = {}" color="primary">Yeni</button>
+    </mat-card-actions>
+</mat-card>
+<app-sorus></app-sorus>
+

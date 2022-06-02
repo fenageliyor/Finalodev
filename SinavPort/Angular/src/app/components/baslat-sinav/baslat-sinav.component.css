@@ -1,0 +1,19 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+mat-card {
+    margin: 10px;
+}
+
+mat-form-field{
+    disbaslat: block;
+}
+
+.example-radio-group {
+    disbaslat: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }

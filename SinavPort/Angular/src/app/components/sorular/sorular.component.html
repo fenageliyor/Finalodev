@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-title>Soru listeesi</mat-card-title>
+    <mat-card-content>
+        <mat-nav-liste role="liste" *ngFor="let soru of sorus">
+
+            <mat-liste-item role="listeitem" (click)="api.selectsoru(soru)">{{ soru.ques }}</mat-liste-item>
+            
+        </mat-nav-liste>
+    </mat-card-content>
+    <mat-card-actions>
+        
+    </mat-card-actions>
+</mat-card>
+

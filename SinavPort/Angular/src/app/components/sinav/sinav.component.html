@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>
+        <span *ngIf="sinav.id">Sınav Düzenle</span>
+        <span *ngIf="!sinav.id">Yeni Sınav</span>
+    </mat-card-title>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+              <input matInput [(ngModel)]="sinav.title" name="Title" placeholder="sinav title">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button *ngIf="!sinav.id" mat-stroked-button (click)="api.postsinav(sinav)" color="primary">Paylaş</button>
+        <button *ngIf="sinav.id" mat-stroked-button (click)="api.putsinav(sinav)" color="primary">Düzenle</button>
+        <button *ngIf="sinav.id" mat-stroked-button (click)="sinav = {}" color="primary">Yeni</button>
+        <button *ngIf="sinav.id" mat-stroked-button [routerLink]="['/soru',sinav.id]"   color="primary">Soruları Düzenle</button>
+    </mat-card-actions>
+</mat-card>
+

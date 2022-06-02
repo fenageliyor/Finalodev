@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <a mat-button  routerLink="/" style="font-size: x-large;">Sınavım</a>
+        <a mat-button  routerLink="/baslat" style="font-size: medium;">Başlat</a>
+        <span style="flex: 1 1 auto;"></span>
+        <a mat-button *ngIf="!auth.isAuthenticated" routerLink="/kayit" style="font-size: medium;">Kayıt Ol</a>
+        <a mat-button *ngIf="!auth.isAuthenticated" routerLink="/giris" style="font-size: medium;">Giriş</a>
+        <a mat-button *ngIf="auth.isAuthenticated"  style="font-size: medium;">{{ auth.username}}</a>
+        <a mat-button *ngIf="auth.isAuthenticated" (click)="auth.logout()" style="font-size: medium;">Çıkış Yap</a>
+    </mat-toolbar-row>
+</mat-toolbar>
